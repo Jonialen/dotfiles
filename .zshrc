@@ -26,16 +26,19 @@ plugins=(
   zsh-completions
 )
 source $ZSH/oh-my-zsh.sh
+
 # ========================
 # 🎨 POWERLEVEL10K
 # ========================
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+
 # ========================
 # ⚙️ STARSHIP (si lo prefieres al tema Powerlevel10k)
 # ========================
 eval "$(starship init zsh)"
+
 # ========================
 # 📦 NVM Lazy Load
 # ========================
@@ -48,6 +51,7 @@ lazy_load_nvm() {
 for cmd in nvm node npm npx; do
   eval "${cmd}() { lazy_load_nvm; ${cmd} \"\$@\"; }"
 done
+
 # ========================
 # 🧠 .nvmrc automático solo cuando cambias de carpeta
 # ========================
@@ -63,6 +67,7 @@ load-nvmrc() {
   fi
 }
 add-zsh-hook chpwd load-nvmrc
+
 # ========================
 # 🔎 HISTORIAL
 # ========================
@@ -70,6 +75,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
+
 # ========================
 # 🛠️ ALIASES
 # ========================
@@ -79,6 +85,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 alias fastfetch='fastfetch -c ~/.config/fastfetch/config-compact.jsonc'
+
 # ========================
 # 📂 PATHS PERSONALIZADOS
 # ========================
@@ -92,10 +99,12 @@ export PATH="$HOME/.bun/bin:$PATH"
 # 🚀 FASTFETCH (decorativo)
 # ========================
 # fastfetch
+
 # ========================
 # 🔚 AVN (Node version auto-switcher)
 # ========================
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh"
+
 # ========================
 # 🕵️ PERFIL DE TIEMPO
 # ========================
@@ -115,3 +124,6 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# dotfiles git alias
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
