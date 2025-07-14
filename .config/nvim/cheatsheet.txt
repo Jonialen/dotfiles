@@ -1,0 +1,31 @@
+TECLA|DESCRIPCIÓN|COMANDO/ACCIÓN
+||
+<leader>w|Guardar archivo|:w
+<leader>q|Salir de Neovim|:q
+||
+y|Copiar al portapapeles|"+y
+yy|Copiar línea al portapapeles|"+yy
+<leader>al|Seleccionar todo el contenido|ggVG
+<leader>ay|Copiar todo el contenido|ggVG"+y
+||
+<leader>e|Abrir/Cerrar explorador de archivos|:NvimTreeToggle
+<leader>ff|Buscar archivos en proyecto|Telescope find_files
+<leader>fg|Buscar texto en proyecto|Telescope live_grep
+||
+gd|Ir a la definición|LSP definition
+gD|Ir a la declaración|LSP declaration
+gi|Ir a la implementación|LSP implementation
+gr|Mostrar referencias|LSP references
+K|Mostrar documentación flotante|LSP hover
+<leader>rn|Renombrar símbolo|LSP rename
+<leader>ca|Mostrar acciones de código|LSP code_action
+<leader>fm|Formatear código|LSP format
+||
+<leader>i|Ver descripción del error|Diagnostic open_float
+]d|Ir al siguiente error|Diagnostic goto_next
+[d|Ir al error anterior|Diagnostic goto_prev
+<leader>Q|Listar errores del archivo|Diagnostic setloclist
+<leader>ld|Buscar errores en proyecto|Telescope diagnostics
+||
+gcc|Comentar/descomentar línea|Comment toggle line
+gc|Comentar/descomentar selección|Comment toggle selection
