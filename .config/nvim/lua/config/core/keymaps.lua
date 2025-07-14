@@ -55,10 +55,10 @@ end, opts)
 
 -- seleccionar todo
 vim.keymap.set('n', '<leader>al', function()
-  vim.cmd('normal! ggVG')
+    vim.cmd('normal! ggVG')
 end, { noremap = true, silent = true, desc = "Seleccionar todo el archivo" })
 
 vim.keymap.set('n', '<leader>ay', function()
-  vim.cmd('normal! ggVG')
-  vim.cmd('normal! "+y')
+    vim.cmd('normal! ggVG')
+    vim.cmd('normal! "+y')
 end, { noremap = true, silent = true, desc = "Seleccionar y copiar todo al portapapeles" })

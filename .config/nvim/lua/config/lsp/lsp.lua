@@ -1,6 +1,8 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 local servers = {
   "rust_analyzer",
   "pyright",
@@ -13,5 +15,7 @@ local servers = {
 
 local lspconfig = require("lspconfig")
 for _, server in ipairs(servers) do
-  lspconfig[server].setup({})
+  lspconfig[server].setup({
+    capabilities = capabilities,
+  })
 end
