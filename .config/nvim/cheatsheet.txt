@@ -29,3 +29,9 @@ K|Mostrar documentación flotante|LSP hover
 ||
 gcc|Comentar/descomentar línea|Comment toggle line
 gc|Comentar/descomentar selección|Comment toggle selection
+||
+<C-l>|Expandir o saltar al siguiente campo del snippet|luasnip expand/jump
+<C-h>|Saltar al campo anterior del snippet|luasnip jump back
+||
+<leader>dv|Abrir vista de cambios de Git|:DiffviewOpen
+<leader>dh|Ver historial de Git del archivo actual|:DiffviewFileHistory %

@@ -8,6 +8,9 @@ require("config.core.autocmds")
 require("config.ui.colorscheme")
 require("config.ui.statusline")
 require("config.ui.nvim-tree")
+require("config.ui.indent-blankline")
+require("config.ui.which-key")
+require("config.ui.alpha")
 
 -- LSP y Autocompletado
 require("config.lsp.lsp")
@@ -17,6 +20,7 @@ require("config.lsp.cmp")
 require("config.coding.treesitter")
 require("config.coding.autopairs")
 require("config.coding.comment")
+require("config.coding.luasnip")
 
 -- Git
 require("config.git.gitsigns")

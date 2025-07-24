@@ -1,4 +1,16 @@
+local augroup = vim.api.nvim_create_augroup("UserAutocmds", { clear = true })
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = augroup,
+    pattern = "*",
+    callback = function()
+        vim.lsp.buf.format({ async = false }) -- Usar formateo síncrono
+    end,
+    desc = "Format file before saving",
+})
+
 vim.api.nvim_create_autocmd("BufNewFile", {
+  group = augroup,
   pattern = "*",
   callback = function()
     local filepath = vim.fn.expand("%:p")

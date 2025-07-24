@@ -64,7 +64,26 @@ Aquí tienes una lista de los atajos más importantes, agrupados por funcionalid
 - **telescope.nvim**: Un buscador "fuzzy" súper rápido para encontrar archivos, texto, diagnósticos y más.
 - **nvim-tree.lua**: Un explorador de archivos moderno en forma de árbol.
 - **nvim-lspconfig** y **mason.nvim**: Configuran el Language Server Protocol (LSP) para darte autocompletado, diagnósticos y navegación de código inteligente. Mason ayuda a instalar los servidores de lenguaje que necesites (ej. `pyright` para Python, `tsserver` para TypeScript).
-- **nvim-cmp**: Motor de autocompletado que se integra con el LSP.
+- **nvim-cmp**: Motor de autocompletado que se integra con el LSP y otros sistemas como los snippets.
+- **luasnip**: Permite usar snippets (plantillas de código) para escribir código repetitivo rápidamente.
 - **gitsigns.nvim**: Añade indicadores en el lateral para mostrar las líneas añadidas, modificadas o eliminadas según Git.
 - **Comment.nvim**: Permite comentar y descomentar líneas o bloques de código fácilmente (normalmente con `gcc` para una línea o `gc` en modo visual).
 - **nvim-autopairs**: Cierra automáticamente paréntesis, corchetes, comillas, etc.
+- **null-ls.nvim**: Integra formateadores y linters externos para mantener un código limpio y consistente. Por defecto, formatea el código automáticamente al guardar.
+- **indent-blankline.nvim**: Muestra guías visuales para la indentación.
+- **which-key.nvim**: Muestra una ventana emergente con los atajos de teclado disponibles después de presionar la tecla líder.
+- **diffview.nvim**: Proporciona una interfaz mejorada para visualizar los cambios de Git.
+- **alpha-nvim**: Muestra un panel de inicio o "dashboard" con accesos directos útiles.
+
+## 5. Dependencias Externas
+
+Para que todas las funcionalidades operen correctamente, necesitas instalar algunas herramientas externas. Puedes usar `mason.nvim` para instalar la mayoría de ellas directamente desde Neovim.
+
+- **Servidores de Lenguaje (LSP)**:
+  - Abre Mason con `:Mason`.
+  - Busca e instala los servidores para los lenguajes que uses (ej. `lua-language-server`, `tsserver`, `pyright`).
+- **Formateadores y Linters (para null-ls)**:
+  - Abre Mason con `:Mason`.
+  - Instala las herramientas que necesites. Para la configuración inicial, se recomienda:
+    - `stylua` (para formatear Lua)
+    - `prettier` (para formatear web, JSON, etc.)

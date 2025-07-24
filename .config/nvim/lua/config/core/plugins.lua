@@ -25,4 +25,39 @@ require("lazy").setup({
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "neovim/nvim-lspconfig" },
+    { "nvim-tree/nvim-web-devicons" },
+    {
+        "dzfrias/arena.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("config.coding.arena")
+        end,
+    },
+    {
+        "nvimtools/none-ls.nvim",
+        config = function()
+            require("config.coding.null-ls")
+        end,
+    },
+    { "L3MON4D3/luasnip" },
+    { "saadparwaiz1/cmp_luasnip" },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function()
+            require("config.ui.indent-blankline")
+        end,
+    },
+    {
+        "folke/which-key.nvim",
+        config = function()
+            require("config.ui.which-key")
+        end,
+    },
+    { "sindrets/diffview.nvim" },
+    {
+        "goolord/alpha-nvim",
+        config = function()
+            require("config.ui.alpha")
+        end,
+    },
 })

@@ -62,3 +62,12 @@ vim.keymap.set('n', '<leader>ay', function()
     vim.cmd('normal! ggVG')
     vim.cmd('normal! "+y')
 end, { noremap = true, silent = true, desc = "Seleccionar y copiar todo al portapapeles" })
+
+-- Atajo para Arena (buffer switcher)
+vim.keymap.set('n', '<leader>b', function()
+    require('arena').toggle()
+end, opts)
+
+-- Atajos para Diffview
+vim.keymap.set('n', '<leader>dv', ':DiffviewOpen<CR>', opts)
+vim.keymap.set('n', '<leader>dh', ':DiffviewFileHistory %<CR>', opts)
