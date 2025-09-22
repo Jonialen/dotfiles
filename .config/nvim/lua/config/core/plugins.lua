@@ -11,11 +11,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    { "nvim-treesitter/nvim-treesitter",  build = ":TSUpdate" },
     { "windwp/nvim-autopairs" },
     { "numToStr/Comment.nvim" },
     { "lewis6991/gitsigns.nvim" },
-    { "nvim-telescope/telescope.nvim",   dependencies = { "nvim-lua/plenary.nvim" } },
+    { "nvim-telescope/telescope.nvim",    dependencies = { "nvim-lua/plenary.nvim" } },
     { "nvim-tree/nvim-tree.lua" },
     { "nvim-lualine/lualine.nvim" },
     { "hrsh7th/nvim-cmp" },
