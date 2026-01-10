@@ -1,18 +1,16 @@
-#!/bin/sh
-
-class=$(playerctl metadata --player=spotify --format '{{lc(status)}}')
+#!/usr/bin/env bash
+class=$(playerctl metadata --player=spotify --format '{{lc(status)}}' 2>/dev/null)
 icon=" "
 
 if [[ $class == "playing" ]]; then
-  info=$(playerctl metadata --player=spotify --format '{{artist}} - {{title}}')
-  if [[ ${#info} > 40 ]]; then
-    info=$(echo $info | cut -c1-40)"..."
-  fi
-  text=$info" "$icon
+  info=$(playerctl metadata --player=spotify --format '{{artist}} - {{title}}' 2>/dev/null)
+  max=${WAYBAR_SPOTIFY_MAX:-40}
+  [[ ${#info} -gt $max ]] && info="${info:0:$max}…"
+  text="$icon  $info"
 elif [[ $class == "paused" ]]; then
-  text=$icon
-elif [[ $class == "stopped" ]]; then
+  text="$icon"
+else
   text=""
 fi
 
-echo -e "{\"text\":\""$text"\", \"class\":\""$class"\"}"
+jq -nc --arg text "$text" --arg class "$class" '{text:$text, class:$class}'

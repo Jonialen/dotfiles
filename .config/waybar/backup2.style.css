@@ -1,0 +1,102 @@
+* {
+    font-family: "JetBrainsMono NerdFont";
+    font-size: 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#waybar {
+    background: rgba(23, 23, 23, 0.85);
+    /* vidrio oscuro */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e5e5e5;
+    padding: 3px 8px;
+}
+
+/* Workspaces */
+#workspaces button {
+    color: #9ca3af;
+    padding: 0 8px;
+    margin: 0 3px;
+    border-radius: 6px;
+}
+
+#workspaces button.active {
+    color: #a3e635;
+    /* verde brillante */
+    background: rgba(163, 230, 53, 0.15);
+    font-weight: bold;
+}
+
+#workspaces button:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #d4d4d8;
+}
+
+/* Clock */
+#clock {
+    color: #f9fafb;
+    font-weight: bold;
+}
+
+/* Modules */
+#cpu {
+    color: #38bdf8;
+}
+
+#memory {
+    color: #c084fc;
+}
+
+#temperature {
+    color: #facc15;
+}
+
+#pulseaudio {
+    color: #34d399;
+}
+
+#network {
+    color: #60a5fa;
+}
+
+#network.disconnected {
+    color: #ef4444;
+}
+
+#battery {
+    color: #e5e5e5;
+}
+
+#battery.charging {
+    color: #22c55e;
+}
+
+#custom-powermenu {
+    color: #f87171;
+}
+
+#custom-spotify {
+    color: #1db954;
+    font-weight: bold;
+}
+
+/* Tray */
+#tray {
+    padding-left: 6px;
+}
+
+/* Battery blink */
+#battery.critical:not(.charging) {
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+        color: #bf616a;
+    }
+}

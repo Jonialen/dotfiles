@@ -1,99 +1,149 @@
 * {
-  font-family: "Jetbrains Mono NerdFont";
+    font-family: "JetBrainsMono NerdFont", monospace;
+    font-size: 12px;
+    border-radius: 10px;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
 }
 
-#waybar {
-  background: #171717;
-  color: #fff;
+@define-color bg rgba(18, 24, 20, 0.60);
+/* vidrio oscuro verdoso */
+@define-color bg-strong rgba(18, 24, 20, 0.82);
+@define-color fg #e6e7e7;
+@define-color subfg #a6adb3;
+@define-color green #a3e635;
+@define-color green-2 #34d399;
+@define-color blue #60a5fa;
+@define-color cyan #38bdf8;
+@define-color purple #c084fc;
+@define-color yellow #facc15;
+@define-color red #ef4444;
+
+window#waybar {
+    background: @bg-strong;
+    /* mejor legibilidad con blur */
+    color: @fg;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 4px 8px;
 }
 
-#clock {
-  color: #fff;
-}
-
-#tray {
-  padding-left: 4px;
-}
-
-#workspaces button:hover {
-  background-color: transparent;
+.modules-left>widget,
+.modules-center>widget,
+.modules-right>widget {
+    margin: 0 10px;
 }
 
 #workspaces button {
-  color: #737373;
-  padding-left: 4px;
-  padding-right: 4px;
-  border-radius: 0px;
-}
-
-#workspaces button:hover {
-  background-color: #262626;
+    color: @subfg;
+    background: transparent;
+    padding: 0 9px;
+    margin: 0 2px;
+    border-radius: 8px;
+    border: 1px solid transparent;
 }
 
 #workspaces button.active {
-  color: #84cc16;
+    color: @green;
+    background: rgba(163, 230, 53, 0.15);
+    border-color: rgba(163, 230, 53, 0.25);
+    font-weight: 700;
 }
 
-#window {
-  color: #fff;
+#workspaces button.urgent {
+    color: @red;
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.25);
 }
 
-#network {
-  color: #3b82f6;
-  margin-right: 8px;
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f3f4f6;
 }
 
-#network.disconnected {
-  color: #e60914;
-  margin-right: 8px;
+#clock {
+    color: #f9fafb;
+    font-weight: 700;
 }
 
-#pulseaudio {
-  color: #14b8a6;
-  margin-right: 4px;
-}
-
+/* Colores por módulo */
 #cpu {
-  color: #0ea5e9;
-  margin-right: 4px;
-}
-
-#temperature {
-  color: #eab308;
-  margin-right: 4px;
+    color: @cyan;
 }
 
 #memory {
-  color: #d946ef;
-  margin-right: 4px;
+    color: @purple;
 }
 
-#custom-powermenu {
-  color: #f43f5e;
+#temperature {
+    color: @yellow;
+}
+
+#pulseaudio {
+    color: @green-2;
+}
+
+#network {
+    color: @blue;
+}
+
+#network.disconnected {
+    color: @red;
 }
 
 #battery {
-	margin-right: 4px;
-	transition: none;
-	color: #ffffff;
+    color: @fg;
 }
 
-#battery.charging, #battery.plugged {
-	color: #29e019;
+#battery.charging {
+    color: @green-2;
 }
 
+#custom-powermenu {
+    color: #f87171;
+}
+
+#custom-spotify {
+    color: #1db954;
+    font-weight: 700;
+}
+
+#tray {
+    padding-left: 6px;
+}
+
+/* Grupo expandible (si lo usas) */
+#group-expand {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 2px 6px;
+    border-radius: 8px;
+}
+
+/* Batería crítica parpadeo */
 #battery.critical:not(.charging) {
-/*    background-color: #171717; */
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation: blink 0.6s linear infinite alternate;
 }
 
 @keyframes blink {
     to {
-        background-color: #BF616A;
+        color: #bf616a;
     }
+}
+
+/* Separador minimal */
+#custom-sep {
+    color: rgba(255, 255, 255, 0.18);
+    padding: 0 6px;
+    margin: 0 2px;
+}
+
+#battery,
+#network {
+    min-width: 4px;
+    /* reserva espacio */
+    padding: 0 4px;
+    /* aire a los lados */
+    margin: 0 1px;
+    /* separa de vecinos */
 }
